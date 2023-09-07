@@ -6,12 +6,13 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Navbar from "./components/Navbar";
 import { useState } from "react";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
 
     const [isLoggedIn, setLoggedIn] = useState(false);
     return(
-      <div>
+      <div className="w-screen h-screen bg-richblack-900 flex flex-col">
         <Navbar isLoggedIn={isLoggedIn} setLoggedIn={setLoggedIn}/>
         
 
@@ -19,7 +20,11 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login setLoggedIn={setLoggedIn}/>}/>
           <Route path="/signup" element={<Signup setLoggedIn={setLoggedIn}/>}/>
-          <Route path="/dashboard" element={<Dashboard/>}/>
+          <Route path="/dashboard" element={
+            <PrivateRoute isLoggedIn={isLoggedIn}>
+              <Dashboard/>
+            </PrivateRoute>
+          }/>
         </Routes>
       </div>
     );
