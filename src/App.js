@@ -7,6 +7,8 @@ import Signup from './pages/Signup'
 import Navbar from "./components/Navbar";
 import { useState } from "react";
 import PrivateRoute from "./components/PrivateRoute";
+import Forgotpass from "./pages/Forgotpass";
+import Changepasspage from "./pages/Changepasspage";
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login setLoggedIn={setLoggedIn}/>}/>
           <Route path="/signup" element={<Signup setLoggedIn={setLoggedIn}/>}/>
+          <Route path="/forgotpass" element={<Forgotpass/>} />
+          <Route path="/changepass" element={<Changepasspage/>} />
           <Route path="/dashboard" element={
             <PrivateRoute isLoggedIn={isLoggedIn}>
               <Dashboard/>

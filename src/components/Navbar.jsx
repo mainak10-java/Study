@@ -10,8 +10,8 @@ const Navbar = ({isLoggedIn, setLoggedIn}) =>{
             </Link>
 
             <nav>
-                <ul className='flex gap-x-6 text-white'>
-                    <li>
+                <ul className='flex gap-x-6 text-richblack-25'>
+                    <li >
                         <Link to='/'>Home</Link>
                     </li>
                     <li>
@@ -26,7 +26,8 @@ const Navbar = ({isLoggedIn, setLoggedIn}) =>{
             <div className='flex items-center gap-4'>
                 {   !isLoggedIn &&
                     <Link to='/login'>
-                        <button className='bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700'>
+                        <button className='bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700
+                        hover:bg-richblack-900 transition-all duration-100 hover:text-richblack-25'>
                             Log In
                         </button>
                     </Link>
@@ -34,7 +35,8 @@ const Navbar = ({isLoggedIn, setLoggedIn}) =>{
 
                 {   !isLoggedIn &&
                     <Link to='/signup'>
-                        <button className='bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700'>
+                        <button className='bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700
+                         hover:bg-richblack-900 transition-all duration-100  hover:text-richblack-25'>
                             Sign Up
                         </button>
                     </Link>

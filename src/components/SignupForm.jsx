@@ -21,6 +21,10 @@ const SignupForm = ({setLoggedIn}) =>{
 
     function submitHandler(e){
         e.preventDefault();
+        if(formData.password.length < 8 && formData.confirmPassword.length < 8){
+            toast.error('Create a password with a length of eight or more')
+            return;
+        }
         if(formData.password !== formData.confirmPassword)
         {
             toast.error('Passords do not match');
@@ -61,7 +65,7 @@ const SignupForm = ({setLoggedIn}) =>{
             <form onSubmit={submitHandler}>
                 <div className="flex justify-between mb-3">
                     <label>
-                        <p  className="text-[0.875rem] text-richblack-5 leading-[1.375rem]">
+                        <p className="text-[0.875rem] text-richblack-5 leading-[1.375rem]">
                             First Name <sup className="text-pink-200">*</sup>
                         </p>
 
@@ -72,7 +76,7 @@ const SignupForm = ({setLoggedIn}) =>{
                             onChange={changeHandler}
                             placeholder="Enter your First Name"
                             value={formData.firstName} 
-                            className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700 "/>
+                            className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-100 border-b"/>
                     </label>
 
                     <label>
@@ -87,7 +91,7 @@ const SignupForm = ({setLoggedIn}) =>{
                             onChange={changeHandler}
                             placeholder="Enter your Last Name"
                             value={formData.lastName} 
-                            className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700 "/>
+                            className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700 border-b"/>
                     </label>
  
                 </div>
@@ -104,7 +108,7 @@ const SignupForm = ({setLoggedIn}) =>{
                         onChange={changeHandler}
                         placeholder="Enter your Email Address"
                         value={formData.email} 
-                        className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700 "/>
+                        className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700 border-b"/>
                 </label>
 
                 <div className="flex justify-between mt-3">
@@ -120,7 +124,7 @@ const SignupForm = ({setLoggedIn}) =>{
                             onChange={changeHandler}
                             value={formData.password}
                             placeholder="Enter password"
-                            className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700 "/>
+                            className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700 border-b"/>
 
                         <span onClick={() => setShowPassword((prev) => !prev)} 
                         className="text-richblack-700 absolute right-3 top-[45px] cursor-pointer">
@@ -140,7 +144,7 @@ const SignupForm = ({setLoggedIn}) =>{
                             onChange={changeHandler}
                             value={formData.confirmPassword}
                             placeholder="Confirm password"
-                            className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700"/>
+                            className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700 border-b"/>
 
                         <span onClick={() => setShowCPassword((prev) => !prev)}
                         className="text-richblack-700 absolute right-3 top-[45px] cursor-pointer">

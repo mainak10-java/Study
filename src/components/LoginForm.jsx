@@ -38,7 +38,7 @@ const LoginForm = ({setLoggedIn}) =>{
                     onChange={changeHandler}
                     value={formData.email}
                     placeholder="Enter Your Email Address"
-                    className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700 "/>
+                    className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700 border-b"/>
             </label>
 
             <label className="w-full relative">
@@ -53,15 +53,15 @@ const LoginForm = ({setLoggedIn}) =>{
                     onChange={changeHandler}
                     value={formData.password}
                     placeholder="Enter your password"
-                    className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700"/>
+                    className="w-full bg-richblack-800 mt-3 p-[12px] rounded-[0.5rem] text-richblack-700 border-b"/>
 
                 <span onClick={() => setShowPassword((prev) => !prev)} 
                  className="text-richblack-700 absolute right-3 top-[45px] cursor-pointer">
                     {showPassword ? (<AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF"/>) : (<AiOutlineEye fontSize={24} fill="#AFB2BF"/>)}
                 </span>
                 
-                <Link to='#'>
-                    <p className="text-xs mt-1 text-blue-100 max-w-max ml-auto">
+                <Link to='/forgotpass'>
+                    <p className="text-xs mt-1 text-blue-100 max-w-max ml-auto cursor-pointer">
                         Forgot Password
                     </p>
                 </Link>
